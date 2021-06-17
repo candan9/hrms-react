@@ -1,20 +1,21 @@
 import React , { useState, useEffect } from 'react';
 import { Icon, Table } from "semantic-ui-react";
 import JobAdvService from '../../services/jobAdvService';
-
+import StatusService from '../../services/statusService';
+import Status from './Status'
 export default function AJobAdvList() {
-    const [jobAdv, setJobAdvs] = useState([]);
-    const [status, setStatuses] = useState([]);
+    const [jobAdvs, setJobAdvs] = useState([]);
+    const [statuses, setStatuses] = useState([]);
   
     useEffect(() => {
-      fetchJobPostings();
-      fetchStatusTypes();
+      fetchJobAdvs();
+      fetchStatuses();
     }, []);
   
     const fetchJobAdvs = () => {
       let jobAdvService = new JobAdvService();
       jobAdvService.getAll().then((result) => {
-        setJobAdvss(result.data.data);
+        setJobAdvs(result.data.data);
       });
     };
   
@@ -25,9 +26,9 @@ export default function AJobAdvList() {
       });
     };
   
-    const statusOptions = statuses.map((statuses, index) => ({
+    const statusOptions = statuses.map((status, index) => ({
       key: index,
-      text: statuses.name,
+      text: status.name,
       value: status.id,
     }));
   
@@ -62,7 +63,7 @@ export default function AJobAdvList() {
             {jobAdvs.map((jobAdv, i) => (
               <Table.Row key={i}>
                 <Table.Cell>
-                  <StatusDropdown
+                  <Status
                     statusOptions={statusOptions}
                     jobAdvId={jobAdv.id}
                   />

@@ -1,4 +1,3 @@
-import React from 'react'
 import React, { useState, useEffect } from "react";
 import {
   Button,
@@ -17,7 +16,7 @@ import { Menu } from "semantic-ui-react";
 import JobAdvService from '../../services/jobAdvService';
 import ProvinceService from '../../services/provinceService';
 import EmploymentService from '../../services/employmentService';
-export default function AddJobAdv() {
+export default function AddJobAdv({triggerButton }) {
     let jobAdvService = new JobAdvService();
 
     const [jobAdvs, setJobAdvs] = useState([]);

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Button, Icon } from "semantic-ui-react";
 export default function JobInfo({ jobAdv }) {
     let defaultImage =
     "https://res.cloudinary.com/hrmsemre/image/upload/v1622749031/sample.jpg";

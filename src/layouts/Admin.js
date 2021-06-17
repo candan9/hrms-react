@@ -1,4 +1,5 @@
 import React from 'react'
+import { Grid } from "semantic-ui-react";
 import AdminMenu from '../pages/Admin/AdminMenu';
 import AJobAdvList from '../pages/Admin/AJobAdvList';
 export default function Admin() {

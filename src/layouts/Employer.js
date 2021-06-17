@@ -1,4 +1,5 @@
 import React from 'react'
+import { Grid } from "semantic-ui-react";
 import EJobAdvList from '../pages/Employer/EJobAdvList';
 import EmployerMenu from '../pages/Employer/EmployerMenu';
 export default function Employer() {

@@ -5,7 +5,7 @@ import JobAdvStatusService from '../../services/jobAdvStatusService';
 import JobStatusModal from './JobStatusModal';
 
 export default function Status({ statusOptions, jobAdvId }) {
-    const [status, setStatus] = useState([]);
+  const [status, setStatus] = useState([]);
   const [open, setOpen] = useState(false);
   const [newStatus, setNewStatus] = useState([]);
   const setModalState = (value) => {

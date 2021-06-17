@@ -1,6 +1,7 @@
 import React , { useState, useEffect } from 'react'
 import { Button, Icon, Table } from "semantic-ui-react";
 import JobAdvService from '../../services/jobAdvService';
+import AddJobAdv from './AddJobAdv';
 export default function EJobAdvList() {
     const [jobAdvs, setJobAdvs] = useState([]);
   const [fakeEmployerId, setFakeEmployerId] = useState(1);
@@ -17,7 +18,7 @@ export default function EJobAdvList() {
         <Table.Header align="center">
           <Table.Row>
             <Table.HeaderCell rowSpan="2">
-              <AddJobPostingModal
+              <AddJobAdv
                 triggerButton={
                   <Button primary icon labelPosition="left">
                     <Icon name="add" />

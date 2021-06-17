@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function JobSalary() {
+export default function JobSalary({jobAdv}) {
     return (
         <div
           style={{

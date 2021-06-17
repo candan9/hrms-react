@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "semantic-ui-react";
 import JobAdvService from "../../services/jobAdvService";
+import JobAdv from "./JobAdv";
 export default function JobAdvList({ setCurrentJobAdv }) {
     const [jobAdvs, setJobAdvs] = useState([]);
     useEffect(() => {
