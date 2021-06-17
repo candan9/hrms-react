@@ -12,7 +12,7 @@ export default function EJobAdvList() {
   }, []);
 
   return (
-    <section className="scroll-bar overflow-scroll scroll-height">
+    <section >
       <Table celled selectable structured>
         <Table.Header align="center">
           <Table.Row>
@@ -87,7 +87,7 @@ export default function EJobAdvList() {
               ) : (
                 <Table.Cell />
               )}
-              {jobAdv.jobPostingConfirmation?.confirmed ? (
+              {jobAdv.jobAdvConfirmation?.confirmed ? (
                 <Table.Cell textAlign="center">
                   <Icon color="green" name="checkmark" size="large" />
                 </Table.Cell>

@@ -24,7 +24,7 @@ export default function Status({ statusOptions, jobAdvId }) {
   const dropdownChangeHandler = (data) => {
     setNewStatus(
         statusOptions.filter(
-        (statusType) => statusType.value === data.value
+        (status) => status.value === data.value
       )[0]
     );
     setOpen(true);
@@ -38,7 +38,7 @@ export default function Status({ statusOptions, jobAdvId }) {
             placeholder="Durum"
             search
             selection
-            defaultValue={stat?.statusType.id}
+            defaultValue={stat?.status.id}
             options={statusOptions}
             onChange={(event, data) => dropdownChangeHandler(data)}
           />

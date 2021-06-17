@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Menu, Button } from "semantic-ui-react";
 
-export default function SignedOut() {
-    return (
-        <div>
-            
-        </div>
-    )
+export default function SignedOut({ signIn }) {
+  return (
+    <div>
+      <Menu.Item>
+        <Button.Group>
+          <Button size="small">Kayıt Ol</Button>
+          <Button.Or text="&" />
+          <Button positive onClick={signIn}>
+            Oturum aç
+          </Button>
+        </Button.Group>
+      </Menu.Item>
+    </div>
+  );
 }

@@ -1,9 +1,30 @@
-import React from 'react'
-
-export default function JobAdvList() {
+import React, { useState, useEffect } from "react";
+import { Table } from "semantic-ui-react";
+import JobAdvService from "../../services/jobAdvService";
+export default function JobAdvList({ setCurrentJobAdv }) {
+    const [jobAdvs, setJobAdvs] = useState([]);
+    useEffect(() => {
+      let jobAdvService = new JobAdvService();
+      jobAdvService
+        .getAllApprovedStatus()
+        .then((result) => setCurrentJobAdv(result.data.data));
+    }, []);
     return (
-        <div>
-            
-        </div>
-    )
+      <section>
+        <Table >
+          <Table.Body>
+            {jobAdvs.map((jobAdv, i) => (
+              <Table.Row key={i}>
+                <Table.Cell>
+                  <JobAdv
+                    setCurrentJobPost={setCurrentJobAdv}
+                    jobPost={jobAdv}
+                  />
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+      </section>
+    );
 }

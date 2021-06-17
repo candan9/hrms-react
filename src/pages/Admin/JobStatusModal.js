@@ -4,7 +4,7 @@ import JobAdvStatusService from '../../services/jobAdvStatusService';
 
 
 export default function JobStatusModal({
-    jobPostingId,
+    jobAdvId,
     open,
     setModalState,
     status,
@@ -18,8 +18,8 @@ export default function JobStatusModal({
   const confirmNewStatus = () => {
     let jobAdvStatusService = new JobAdvStatusService();
     jobAdvStatusService.add({
-      jobPosting: {
-        id: jobPostingId,
+      jobAdv: {
+        id: jobAdvId,
       },
       employee: {
         id: fakeEmployeeId,
